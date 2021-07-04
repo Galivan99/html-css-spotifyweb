@@ -23,6 +23,10 @@
     color: #707070;
 }
 
+.padding{
+    padding: 0 10px;
+}
+
 /* Main */
 
 main{
@@ -38,6 +42,7 @@ main .main_nav{
     flex-direction: column;
     background-color: black;
     font-size: large;
+    float: left;
 }
 
 main .main_nav a{
@@ -103,14 +108,17 @@ footer{
     height: 90px;
     display: flex;
     background-color: #282828;
-    justify-content: left;
+    justify-content: space-between;
+    flex-direction: row;
 
 }
+
 
 
 #player .p1{
     vertical-align: middle;
     height: 100%;
+    margin-top: 15px;
 }
 
 #player .p1 .desc{
@@ -136,6 +144,127 @@ footer{
     margin-left: 15px;
 }
 
+#player .p2{
+    text-align: center;
+    height: 100%;
+    color: white;
+
+}
+
+.gray_line{
+    background-color:#707070 ;
+    height: 5px;
+    width: 100%;
+}
+
+/* content */
+
+
+#content{
+    background-color: #141922;
+    float: left;
+    width: calc(100% - 230px);
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+#content .nav_body{
+    text-align: center;
+    height: 39px;
+    display: block;
+}
+
+#content .nav_body ul{
+    margin-top: 10px;
+}
+
+#content .nav_body ul li{
+    color: #707070;
+    display: inline;
+    padding: 10px;
+}
+
+#content img{
+    width: 200px;
+    height: 200px;
+}
+/* .recently */
+
+
+#content .recently {
+    color: white;
+    width: 100%;
+}
+
+
+#content .recently h2{
+    padding: 10px;
+}
+
+#content .recently .img{
+    flex-direction: column;
+    text-align: center;
+    width: calc(100% / 6) ;
+    height: 50%;
+
+}
+
+#content .recently .all_img{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    width: 100%;
+    
+}
+/* created_for_you */
+#content .created_for_you {
+    width: 100%;
+}
+
+#content .created_for_you .all_img{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    float: left;
+    
+}
+
+#content .created_for_you .img{
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    width:calc(100% / 6);
+    height: 50%;
+
+}
+
+/* artists */
+
+#content .artist {
+    width: 100%;
+}
+
+#content .artist .all_img{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    float: left;
+    
+}
+
+#content .artist .img{
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    width:calc(100% / 6);
+    height: 50%;
+
+}
+
+#content .artist .img img{
+    border-radius: 50%;
+}
 /* Debug */
 
 .debug main{
@@ -148,7 +277,7 @@ footer{
 
 .debug .main_nav{
     background-color: lightpink;
-}
+} 
 
 /* MediaQuery */
 
