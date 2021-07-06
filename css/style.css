@@ -87,7 +87,8 @@ main .main_nav li i{
     position: absolute;
     bottom: 0;
     padding: 10px;
-    color: #707070
+    color: #707070;
+    background-color: black;
 }
  
 .j_doe #j_user{
@@ -108,55 +109,86 @@ main .main_nav li i{
 
 footer{
     height: 90px;
-    display: flex;
     background-color: #282828;
+}
+
+footer #player{
+    display: flex;
     justify-content: space-between;
-    flex-direction: row;
-
-}
-
-
-
-#player .p1{
-    vertical-align: middle;
+    align-items: center;
+    width: 100%;
     height: 100%;
-    margin-top: 15px;
 }
 
-#player .p1 .desc{
-    flex-direction: column;
-    float: left;
-    margin-top: 15px;
-    vertical-align: middle;
-
+footer #player .p1{
+    display: flex;
 }
 
-#player .p1 img{
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-    float: left;
-
+footer #player .p1 .desc{
+    margin-top: 10px;
+    padding-left: 2px;
 }
 
-#player .p1 .icon{
-    color:#707070 ;
-    float: right;
-    margin-top: 15px;
-    margin-left: 15px;
+footer #player .p1 .icon{
+    float: right; 
+    margin-top: 10px;
 }
 
-#player .p2{
+footer #player .p1 , footer #player .p3{
+    padding: 10px;
+    height: 100%;
+    width: 230px;
+}
+
+footer #player .p2{
+    padding: 10px;
+    width: 40%;
+    height: 100%;
     text-align: center;
-    height: 100%;
     color: white;
-
 }
 
-.gray_line{
+footer #player .p2 i{
+    padding: 10px;
+    font-size: large;
+}
+
+footer .line{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .line .gray_line {
     background-color:#707070 ;
     height: 5px;
-    width: 100%;
+    width: 80%;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+
+footer .line .gray_line .white_line{
+    width: 25%;
+    height: 5px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+footer #player .p3 i{
+    padding: 5px;
+}
+
+footer #player .p3 .gray_line{ /*UGUALE MA NON FUNZIONA NON CAPISCO */
+    background-color:#707070 ;
+    height: 5px;
+    width: 100px;             
+    border-radius: 15px;
+}
+
+footer #player .p3 .white_line{
+    width: 25%;
+    height: 5px;
+    background-color: white;
+    border-radius: 15px;
 }
 
 /* content */
@@ -190,7 +222,7 @@ footer{
 #content img{
     width: 200px;
     height: 200px;
-}
+}   
 /* .recently */
 
 
@@ -205,18 +237,22 @@ footer{
 }
 
 #content .recently .img{
-    flex-direction: column;
+    /* display: inline; */
+    flex-shrink: 0;
     text-align: center;
-    width: calc(100% / 6) ;
-    height: 50%;
+    width: calc(100% / 6 - 15px) ;
+    margin-right: 15px;
+    cursor: pointer;
 
 }
 
 #content .recently .all_img{
-    display: flex;
-    flex-direction: row;
-    float: left;
-    width: 100%;
+    display: flex; 
+    margin: 30px 0;
+    list-style: none;
+    font-size: 13px;
+   
+    
     
 }
 /* created_for_you */
@@ -226,19 +262,19 @@ footer{
 
 #content .created_for_you .all_img{
     display: flex;
-    width: 100%;
-    flex-direction: row;
-    float: left;
+    margin: 30px 0;
+    list-style: none;
+    font-size: 13px;
+    
     
 }
 
 #content .created_for_you .img{
-    flex-direction: column;
+    flex-shrink: 0;
     text-align: center;
-    padding: 10px;
-    width:calc(100% / 6);
-    height: 50%;
-
+    width: calc(100% / 6 - 15px) ;
+    margin-right: 15px;
+    cursor: pointer;
 }
 
 /* artists */
@@ -249,18 +285,19 @@ footer{
 
 #content .artist .all_img{
     display: flex;
-    width: 100%;
-    flex-direction: row;
-    float: left;
+    margin: 30px 0;
+    list-style: none;
+    font-size: 13px;
+    
     
 }
 
 #content .artist .img{
-    flex-direction: column;
+    flex-shrink: 0;
     text-align: center;
-    padding: 10px;
-    width:calc(100% / 6);
-    height: 50%;
+    width: calc(100% / 6 - 15px) ;
+    margin-right: 15px;
+    cursor: pointer;
 
 }
 
@@ -281,6 +318,37 @@ footer{
     background-color: lightpink;
 } 
 
+#small_logo{
+    display: none;
+}
+
+#content .container_hover:hover img{
+    opacity: 0.3;
+}
+
+#content .container_hover:hover i{
+    opacity: 1;
+    font-size: 50px;
+}
+
+.container_hover{
+    position: relative;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+}
+
+.container_hover i{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
 /* MediaQuery */
 
 @media screen and (max-width: 600px) {
@@ -290,5 +358,26 @@ footer{
     
     main #content{
         width: calc(100% - 230px);
+    }
+
+    .main_nav .playlist ,span , .j_doe {
+        display: none;
+    }  
+
+    #small_logo{
+        display: block;
+        width: 25px;
+        height: 25px;
+    }
+
+    #big_logo{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .img{
+        width: calc(100% / 4 - 10px);
+        margin-right: 10px;
     }
 }
