@@ -89,6 +89,7 @@ main .main_nav li i{
     padding: 10px;
     color: #707070;
     background-color: black;
+    width: 100%;
 }
  
 .j_doe #j_user{
@@ -173,16 +174,23 @@ footer .line .gray_line .white_line{
     border-radius: 15px;
 }
 
+footer #player .p3 .position{
+    margin-top: 15px;
+}
+
 footer #player .p3 i{
     padding: 5px;
+    float: left;
 }
 
 footer #player .p3 .gray_line{ 
+    float: left;
     display: block;
     background-color:#707070 ;
     height: 5px;
     width: 100px;             
     border-radius: 15px;
+    margin-top: 10px;
 }
 
 footer #player .p3 .white_line{
@@ -229,7 +237,7 @@ footer #player .p3 .white_line{
 
 #content .recently {
     color: white;
-    width: 100%;
+    display: inline-block;
 }
 
 
@@ -251,10 +259,8 @@ footer #player .p3 .white_line{
     display: flex; 
     margin: 30px 0;
     list-style: none;
-    font-size: 13px;
+    font-size: 13px;   
    
-    
-    
 }
 /* created_for_you */
 #content .created_for_you {
@@ -351,6 +357,12 @@ footer #player .p3 .white_line{
 
 /* MediaQuery */
 
+@media screen and (max-width: 1100px) {
+    #content .img {
+        width: calc((100% / 4) - 10px);
+    }
+}
+
 @media screen and (max-width: 600px) {
     main .main_nav{
         width: 50px;
@@ -375,9 +387,3 @@ footer #player .p3 .white_line{
     }
 }
 
-@media screen and (max-width: 1100px) {
-    .img{
-        width: calc(100% / 4 - 10px);
-        margin-right: 10px;
-    }
-}
